@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteBase /excenbitservices
+Options -Indexes
+RewriteRule ^(.*)$ index.php?url=$1 [NC,L,QSA]

@@ -1,0 +1,38 @@
+
+
+
+
+
+
+1- criar um serviço para executar o script:
+https://www.axllent.org/docs/view/nodejs-service-with-systemd/
+
+criar um arquivo litecoinservice.service em:
+
+/etc/systemd/system
+
+nano /etc/systemd/system/litecoinservice.service
+contendo:
+
+[Unit]
+Description=Litecoin nodejs service
+
+[Service]
+ExecStart=/usr/bin/node /home/davi/nodejs_apps/rest/service.js
+
+[Install]
+WantedBy=multi-user.target
+
+
+3- salvar e dar permissões
+
+sudo chmod 644 /etc/systemd/system/litecoinservice.service
+
+4- habilitar o serviço:
+systemctl enable litecoinservice.service
+5- iniciar serviço
+
+sudo systemctl start litecoinservice.service
+
+ver se está rodando:
+sudo systemctl status litecoinservice.service

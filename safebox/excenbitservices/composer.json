@@ -1,0 +1,7 @@
+{
+    "require": {
+        "chillerlan/php-qrcode": "dev-master",
+        "endroid/qr-code": "^2.5"
+        
+    }
+}

@@ -1,0 +1,169 @@
+<!-------------------------------- spinner center------------------------------>
+<div id ="spinner_center" class="container-fluid" style="display: none;">
+    <div class="text-center" style="position:fixed;top:50%;left:50%">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>    
+</div>
+<!--------------------------------------------------------------------->
+
+<!-------------------------------- result feedback------------------------------>
+<section id="req_result" style="display: none;">
+    <div class="row">    
+    <div class="col-lg-12 text-left">
+        <div class="container">        
+            <h4 id="result_error" class="text-danger"></h4>
+            <h4 id="result_success" class="text-success"></h4>            
+            <h6 id="result_info" class="text-muted"></h6>           
+            <br><br><br><br><br><br><br>
+            <br>
+            <br>       
+        </div>  
+    </div>
+    </div>
+</section>
+<!--------------------------------------------------------------------->
+
+<section class="page-section">
+    <div class="container"> 
+        <div class="row">
+            <div class="col-lg-12 text-left"> 
+                <h4>CASCATE1</h4>
+                <br>              
+                <!-------------------------------- input 1------------------------------>
+                <div id="input1_div">
+                    <a id = "input1_title" class="text-muted" >price: </a>
+                    <div class="input-group">  
+                    <input onchange="inputchange(this.id,label_b);" value = "2" class="form-control form-control-sm" id="input1" name ="input1" type="text" placeholder="0" required>
+                    <span class="input-group-append">
+                        <div id ="input1_label" class="input-group-text border-0 bg-transparent text-muted"><a>USD</a></div>
+                    </span>
+                    <div id = "input1_invalid" class="invalid-feedback"></div>
+                    </div>
+                </div> 
+                <!--------------------------------------------------------------------->
+                <br>
+                <!-------------------------------- submit 1------------------------------>  
+                <button id="btn_submit1" onClick="btn_submit_default(this.id,'Submit',true,'teste_cascate','sample',2,null);" type="button" disabled class="btn btn-info">Submit</button>
+                <br>
+                <div id = "btn_submit1_alert"></div> 
+                <!----------------------------------------------------------------------->         
+                <br>
+                 <!-------------------------------- button 1------------------------------>  
+                <button id="btn1" onClick="buttonclick(this.id);" type="button" class="btn btn-info">Update Resume</button>
+                <br>
+                <div id = "btn1_alert"></div> 
+                <!----------------------------------------------------------------------->        
+                <br>
+                <!-------------------------------- input4 blur ------------------------------>
+                <div id="input4_div">
+                    <a id = "input4_title" class="text-muted" >Nickname: </a>
+                    <div class="input-group">  
+                    <input onblur="inputblur(this.id);" type="text" class="form-control form-control-sm" id="input4" placeholder="Nickname" name="nickname" required value = "<?php echo $nickname; ?>">                    
+                    <div id = "input4_invalid" class="invalid-feedback"></div>
+                    </div>
+                </div> 
+                <!--------------------------------------------------------------------->
+
+                <!-------------------------------- submit with modal 1------------------------------>  
+                <button id="btn_submit1" onClick="$('#modal1').modal('show');" type="button" class="btn btn-sm btn-danger">Cancel all leasings</button>
+                <br>
+                <div id = "btn_submit1_alert"></div> 
+                <!----------------------------------------------------------------------->
+
+                  <!-------------------------------- check 12------------------------------>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check1" onclick="checkclick(this.id);">
+                    <label class="custom-control-label" for="check1">I agree with terms and conditions.</label>
+                    </div>
+                    &nbsp; <br>
+                    <br>
+                    <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check2" onclick="checkclick(this.id);" checked="">
+                    <label class="custom-control-label" for="check2"><strong class = text-danger>I authorize the blocking of all withdrawals until the loan is paid.</strong></label>
+                    </div>
+                <!--------------------------------------------------------------------->
+
+
+
+                <!-------------------------------- radio------------------------------>    
+                <div class="custom-control custom-radio d-inline">
+                <input class="custom-control-input" onClick="radioclick(this.id);" id = "radio1" type="radio" checked name="text_type" value="v_name">
+                <label class="custom-control-label" for="radio1">radio1</label> &nbsp;
+                </div>
+                <div class="custom-control custom-radio d-inline">
+                <input class="custom-control-input" onClick="radioclick(this.id);" id = "radio2" type="radio" name="text_type" value="v_name">
+                <label class="custom-control-label" for="radio2">radio2</label>
+                </div>   
+                <!--------------------------------------------------------------------->
+
+                <!--------------------------------slider------------------------------>
+                <div class="d-flex justify-content-center my-4">
+                    <span class="font-weight-bold mr-2 mt-1">5</span>
+                    <form class="range-field w-50">
+                    <input onchange="sliderchange(this.id);" type="range" class="custom-range" value="10" min="5" step="5" max="100" id="customRange2">
+                    </form>
+                    <span class="font-weight-bold ml-2 mt-1">100</span>
+                </div>
+                <!--------------------------------------------------------------------->    
+
+
+                <!-------------------------------- input1 enable ------------------------------>
+                <div id="input1_div">
+                    <a id = "input1_title" class="text-muted" >Account label: </a>
+                    <div class="input-group">  
+                        <input onchange="inputchange(this.id);" onclick="inputclick(this.id);" type="text" class="form-control form-control-sm font-weight-bold" id="input1" 
+                        placeholder="Sub account label" readonly maxlength="50" name="inputlabel" pattern="[a-zA-Z0-9\s_ ]+" value = "<?php echo $description;?>">                    
+                        &nbsp;    
+                        &nbsp;
+                        <div class="btn-group btn-group-sm">
+                                <button onclick="buttonclick(this.id);" type="button" id = "btn_rename" class="btn btn-info" disabled onclick="this.blur();">change</button>                 
+                        </div>
+                        <div id = "input1_invalid" class="invalid-feedback">44</div>
+                    </div>
+                    <div id = "btn_rename_alert"></div>
+                </div> 
+                <!--------------------------------------------------------------------->  
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+ <!-------------------------------- The Modal leasing -------------------------------->
+<div class="modal" id="modal1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+            <h4 class="modal-title">Confirm purchase? </h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+            
+            <h6><a id = "line1" class="text-muted" > Product: &nbsp;</a> <a><?php echo $product_name;?></a></h6>
+            <h6><a id = "line2" class="text-muted" > Value: &nbsp;</a> <a><?php echo $total;?></a> USDT</h6>  
+            
+            </div>
+             
+            <!-- Modal footer -->
+            <div class="modal-footer">
+            <button  id ="btn_modal1" onClick="btn_submit1('btn_submit1','Cancel all leasings',true,'req_cancel_all_leasing');" type="button" class="btn btn-info" data-dismiss="modal">Confirm</button>
+            <button  type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!----------------------------------------------------------------------->
+
